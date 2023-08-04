@@ -15,6 +15,7 @@ import pythonIcon from '../../assets/icons8-python.svg'
 import astroIconLight from '../../assets/astro-icon-light.svg'
 import astroIconDark from '../../assets/astro-icon-dark.svg'
 import SkillCard from './SkillCard'
+import { Button } from '@mui/material'
 
 export default function Skills() {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
@@ -185,6 +186,11 @@ export default function Skills() {
               alt=""
             />
           </SkillCard>
+        </div>
+        <div className="w-full flex justify-center mt-4">
+          <Button variant="contained" color="primary">
+            See more
+          </Button>
         </div>
       </div>
     </div>

@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react'
 import { useInView, useAnimate } from 'framer-motion'
 import { useSelector } from 'react-redux'
+import ProjectCard from './ProjectCard'
+import emojiPixel from '../../assets/pixel-emojis.jpg'
+import jsonIcon from '../../assets/jsondb.jpg'
+import morseIcon from '../../assets/morse-in-one.jpg'
+import { Button } from '@mui/material'
 
 export default function Projects() {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
@@ -30,7 +35,7 @@ export default function Projects() {
 
   return (
     <div
-      className=" w-full h-screen flex flex-col items-center justify-center text-center gap-4 lg:gap-8 max-w-[600px]"
+      className=" w-full min-h-screen flex flex-col items-center justify-center text-center gap-4 lg:gap-8 "
       id="projects"
     >
       <div
@@ -42,6 +47,31 @@ export default function Projects() {
         }}
       >
         <h1 className="text-3xl mb-4 font-bold">Projects</h1>
+        <div className="flex flex-col items-center justify-center lg:flex-row gap-4">
+          <ProjectCard
+            title="Emoji Pixel Art"
+            description="Emoji Pixel Art is a open source project of pixel arts. It contains emojis in 32x32 canvas made with a free platform called Pixilart."
+            image={emojiPixel}
+            link=""
+          />
+          <ProjectCard
+            title="JsonDb"
+            description="JsonDb is a open source project of a database cli app, made with json files. It is written in C++."
+            image={jsonIcon}
+            link=""
+          />
+          <ProjectCard
+            title="Morse in one "
+            description="A npm package that converts morse code to text and vice versa. It is written in JavaScript."
+            image={morseIcon}
+            link=""
+          />
+        </div>
+        <div className="w-full flex justify-center mt-4">
+          <Button variant="contained" color="primary">
+            See more
+          </Button>
+        </div>
       </div>
     </div>
   )

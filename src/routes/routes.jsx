@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Suspense } from 'react'
 import { HashLoader } from 'react-spinners'
+import { AnimatePresence } from 'framer-motion'
 import React from 'react'
 import Home from '../pages/index.jsx'
 
@@ -18,8 +19,16 @@ export const routes = createBrowserRouter([
     element: handleFallback(Home),
     children: [],
   },
+  {
+    path: '*',
+    element: <h1>Error</h1>,
+  },
 ])
 
 export default function Routes() {
-  return <RouterProvider router={routes}></RouterProvider>
+  return (
+    <AnimatePresence>
+      <RouterProvider router={routes}></RouterProvider>
+    </AnimatePresence>
+  )
 }
