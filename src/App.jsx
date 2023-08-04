@@ -1,15 +1,21 @@
-import { useState } from 'react'
-import { Button } from '@mui/material'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React, { createContext } from 'react'
+import Routes from './routes/routes'
+// import 'animate.css'
+
+// const colorTheme = {
+//   primaryBlue: '#1D5D9B',
+//   secondaryBlue: '#75C2F6',
+//   primaryYellow: '#F4D160',
+//   secondaryYellow: '#FBEEAC',
+// }
+
+export const ColorThemeContext = createContext()
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="grid place-items-center">
-      <Button variant="contained">Hello World</Button>
-    </div>
+    <>
+      <Routes />
+    </>
   )
 }
 
