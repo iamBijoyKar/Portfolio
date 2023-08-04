@@ -16,11 +16,12 @@ import astroIconLight from '../../assets/astro-icon-light.svg'
 import astroIconDark from '../../assets/astro-icon-dark.svg'
 import SkillCard from './SkillCard'
 import { Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 export default function Skills() {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
   const isDark = useSelector((state) => state.mode.darkMode)
-
+  const navigate = useNavigate()
   const [aboutRef, animate] = useAnimate()
   const isInView = useInView(aboutRef)
 
@@ -188,7 +189,11 @@ export default function Skills() {
           </SkillCard>
         </div>
         <div className="w-full flex justify-center mt-4">
-          <Button variant="contained" color="primary">
+          <Button
+            onClick={() => navigate('/skills')}
+            variant="outlined"
+            color="primary"
+          >
             See more
           </Button>
         </div>

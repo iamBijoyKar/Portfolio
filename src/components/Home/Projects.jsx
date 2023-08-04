@@ -6,10 +6,11 @@ import emojiPixel from '../../assets/pixel-emojis.jpg'
 import jsonIcon from '../../assets/jsondb.jpg'
 import morseIcon from '../../assets/morse-in-one.jpg'
 import { Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 export default function Projects() {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
-
+  const navigate = useNavigate()
   const [aboutRef, animate] = useAnimate()
   const isInView = useInView(aboutRef)
 
@@ -68,7 +69,11 @@ export default function Projects() {
           />
         </div>
         <div className="w-full flex justify-center mt-4">
-          <Button variant="contained" color="primary">
+          <Button
+            onClick={() => navigate('projects')}
+            variant="outlined"
+            color="primary"
+          >
             See more
           </Button>
         </div>

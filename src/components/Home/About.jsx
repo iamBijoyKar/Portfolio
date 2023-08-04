@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import { useInView, useAnimate } from 'framer-motion'
 import { useSelector } from 'react-redux'
 import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from 'react-icons/bi'
+import Button from '@mui/material/Button'
+import { useNavigate } from 'react-router-dom'
 
 export default function About() {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
-
+  const navigate = useNavigate()
   const [aboutRef, animate] = useAnimate()
   const isInView = useInView(aboutRef)
 
@@ -57,6 +59,15 @@ export default function About() {
             <BiSolidQuoteAltRight className="inline-block text-2xl relative bottom-[.5rem]" />
           </p>
           <p className="text-lg mt-2 text-end">–Christopher Columbus</p>
+        </div>
+        <div className="w-full flex justify-center mt-8">
+          <Button
+            onClick={() => navigate('/about')}
+            variant="outlined"
+            color="primary"
+          >
+            See more
+          </Button>
         </div>
       </div>
     </div>

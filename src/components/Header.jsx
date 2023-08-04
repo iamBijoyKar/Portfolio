@@ -4,10 +4,15 @@ import { styled } from '@mui/material/styles'
 import { MdDarkMode, MdSunny } from 'react-icons/md'
 import { modeActions } from '../store'
 import { useSelector, useDispatch } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 
 // color theme
 
 export default function Header() {
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+  // console.log(location)
+
   const MyButton = styled(Button)({
     textTransform: 'capitalize',
     // backgroundColor: colorTheme.primaryBlue,
@@ -32,53 +37,55 @@ export default function Header() {
       >
         Bijoy Kar
       </h1>
-      <ul className="gap-5 items-center hidden lg:flex">
-        <li className="">
-          <a
-            href="#intro"
-            className="text-md font-semibold animate-underline "
-            style={{ color: colorTheme.primaryText }}
-          >
-            Home
-          </a>
-        </li>
-        <li className="">
-          <a
-            href="#about"
-            className="text-md font-semibold animate-underline"
-            style={{ color: colorTheme.primaryText }}
-          >
-            About
-          </a>
-        </li>
-        <li className="">
-          <a
-            href="#skills"
-            className="text-md font-semibold animate-underline"
-            style={{ color: colorTheme.primaryText }}
-          >
-            Skills
-          </a>
-        </li>
-        <li className="">
-          <a
-            href="#projects"
-            className="text-md font-semibold animate-underline"
-            style={{ color: colorTheme.primaryText }}
-          >
-            Projects
-          </a>
-        </li>
-        <li className="">
-          <a
-            href="#contact"
-            className="text-md font-semibold animate-underline"
-            style={{ color: colorTheme.primaryText }}
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
+      {isHome && (
+        <ul className="gap-5 items-center hidden lg:flex">
+          <li className="">
+            <a
+              href="#intro"
+              className="text-md font-semibold animate-underline "
+              style={{ color: colorTheme.primaryText }}
+            >
+              Home
+            </a>
+          </li>
+          <li className="">
+            <a
+              href="#about"
+              className="text-md font-semibold animate-underline"
+              style={{ color: colorTheme.primaryText }}
+            >
+              About
+            </a>
+          </li>
+          <li className="">
+            <a
+              href="#skills"
+              className="text-md font-semibold animate-underline"
+              style={{ color: colorTheme.primaryText }}
+            >
+              Skills
+            </a>
+          </li>
+          <li className="">
+            <a
+              href="#projects"
+              className="text-md font-semibold animate-underline"
+              style={{ color: colorTheme.primaryText }}
+            >
+              Projects
+            </a>
+          </li>
+          <li className="">
+            <a
+              href="#contact"
+              className="text-md font-semibold animate-underline"
+              style={{ color: colorTheme.primaryText }}
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      )}
       <div className="flex gap-3 items-center">
         <IconButton onClick={toggleTheme}>
           {!theme ? (
