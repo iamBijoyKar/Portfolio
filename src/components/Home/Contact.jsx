@@ -49,7 +49,7 @@ export default function Contact() {
         }}
       >
         <h1 className="text-3xl mb-4 font-bold">{`Let's`} Connect! </h1>
-        <div className="flex gap-4 items-center justify-center ">
+        <div className="flex flex-wrap lg:flex-row gap-4 items-center justify-center ">
           <ContactCard
             text={'in/iambijoykar'}
             icon={linkedInIcon}
