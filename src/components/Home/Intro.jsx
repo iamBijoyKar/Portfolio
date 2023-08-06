@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import profile from '../../assets/profile.png'
+import profile from '../../assets/profile-min.png'
 import { useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
 import './../../css/fonts.css'

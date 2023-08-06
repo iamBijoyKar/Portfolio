@@ -8,6 +8,7 @@ import githubIcon from '../../assets/icons8-github.svg'
 import twitterIcon from '../../assets/icons8-twitter.svg'
 import redditIcon from '../../assets/icons8-reddit.svg'
 import { useNavigate } from 'react-router-dom'
+import HireMe from './HireMe'
 
 export default function Contact() {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
@@ -83,6 +84,7 @@ export default function Contact() {
           </Button>
         </div>
       </div>
+      <HireMe />
     </div>
   )
 }

@@ -6,6 +6,10 @@ const initialModeState = {
   colorTheme: getTheme(),
 }
 
+const initialConfettiState = {
+  confetti: false,
+}
+
 const modeSlice = createSlice({
   name: 'mode',
   initialState: initialModeState,
@@ -22,10 +26,22 @@ const modeSlice = createSlice({
   },
 })
 
+const confettiSlice = createSlice({
+  name: 'confetti',
+  initialState: initialConfettiState,
+  reducers: {
+    toggle(state) {
+      state.confetti = !state.confetti
+    },
+  },
+})
+
 export const store = configureStore({
   reducer: {
     mode: modeSlice.reducer,
+    confetti: confettiSlice.reducer,
   },
 })
 
 export const modeActions = modeSlice.actions
+export const confettiActions = confettiSlice.actions

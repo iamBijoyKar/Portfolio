@@ -5,6 +5,7 @@ import { MdDarkMode, MdSunny } from 'react-icons/md'
 import { modeActions } from '../store'
 import { useSelector, useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'
+import Confetti from 'react-confetti'
 
 // color theme
 
@@ -19,6 +20,7 @@ export default function Header() {
   })
   const theme = useSelector((state) => state.mode.darkMode)
   const colorTheme = useSelector((state) => state.mode.colorTheme)
+  const confetti = useSelector((state) => state.confetti.confetti)
   const dispatch = useDispatch()
 
   const toggleTheme = () => {
@@ -31,6 +33,7 @@ export default function Header() {
       className="flex items-center justify-between w-full p-4 lg:px-[3rem] lg:py-[1rem] fixed top-0 left-0 z-50"
       style={{ backgroundColor: colorTheme.primaryBg }}
     >
+      {confetti && <Confetti />}
       <h1
         className="text-xl font-bold uppercase"
         style={{ color: colorTheme.primaryText }}
