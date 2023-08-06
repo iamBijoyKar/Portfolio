@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom'
 
 export default function HireMe() {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
+  const isHireMeSubmitted = useSelector(
+    (state) => state.contactForm.isHireMeSubmitted,
+  )
   const dispatch = useDispatch()
   const [handShakeVisible, setHandShakeVisible] = React.useState(false)
   const videoRef = React.useRef(null)
@@ -13,19 +16,25 @@ export default function HireMe() {
 
   const handleClick = () => {
     setHandShakeVisible(true)
-    dispatch(confettiActions.toggle())
     setTimeout(() => {
       setHandShakeVisible(false)
     }, 2500)
     setTimeout(() => {
       //   window.open('mailto:bijoykar54321@gmail.com')
-      dispatch(confettiActions.toggle())
       navigate('/contact')
-    }, 10000)
+      dispatch(confettiActions.toggle())
+    }, 3000)
+    setTimeout(() => {
+      dispatch(confettiActions.toggle())
+    }, 15000)
   }
 
   return (
-    <div className=" flex flex-col justify-center items-center gap-5 ">
+    <div
+      className={` flex flex-col justify-center items-center gap-5 ${
+        isHireMeSubmitted && 'hidden'
+      } `}
+    >
       <div
         onClick={handleClick}
         style={{
