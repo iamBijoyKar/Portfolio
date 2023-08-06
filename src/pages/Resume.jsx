@@ -73,7 +73,14 @@ export default function Resume() {
           className="max-w-[800px] flex flex-col items-center justify-center w-full p-4 "
         >
           <h1 className="text-4xl font-bold text-center mb-4">My Resume</h1>
-          <img src="/resume/Bijoy-Kar.png" alt="" />
+          <img
+            style={{
+              boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.35)',
+            }}
+            className=""
+            src="/resume/Bijoy-Kar.png"
+            alt=""
+          />
           <div className="my-4">
             <ButtonGroup
               variant="contained"
