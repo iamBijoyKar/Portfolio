@@ -127,7 +127,7 @@ export default function BackBtn() {
           Home
         </Link>
         <Link
-          underline="hover"
+          underline="none"
           sx={{ cursor: 'pointer', color: colorTheme.primaryText }}
           to=""
           className="flex items-center"
