@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import {
   useAnimate,
   AnimatePresence,
@@ -56,6 +56,7 @@ export default function ContactForm() {
   }, [isHireMeSubmitted, isSayHiSubmitted, animateOut])
 
   const hireMeHandler = () => {
+    if (!isFormValid) return
     dispatch(contactFormActions.updateIsHireMeSubmitted(true))
     dispatch(confettiActions.toggle())
 
@@ -65,8 +66,40 @@ export default function ContactForm() {
   }
 
   const sayHiHandler = () => {
+    if (!isFormValid) return
     dispatch(contactFormActions.updateIsSayHiSubmitted(true))
   }
+
+  const isEmailValid = (email) => {
+    if (!email) return true
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  }
+  const isNameValid = (name) => {
+    if (!name) return true
+    return /^[a-zA-Z ]+$/.test(name)
+  }
+  const isMessageValid = (message) => {
+    if (message === '') return true
+    return message.trim().length > 0
+  }
+
+  let nameValid = useMemo(() => {
+    return isNameValid(name)
+  }, [name])
+  let emailValid = useMemo(() => {
+    return isEmailValid(email)
+  }, [email])
+  let messageValid = useMemo(() => {
+    return isMessageValid(message)
+  }, [message])
+
+  let isFormValid =
+    nameValid &&
+    emailValid &&
+    messageValid &&
+    message.trim().length > 0 &&
+    email.trim().length > 0 &&
+    name.trim().length > 0
 
   return (
     <>
@@ -109,6 +142,7 @@ export default function ContactForm() {
                   variant="outlined"
                   type="text"
                   inputMode="text"
+                  error={!nameValid}
                   value={name}
                   onChange={(e) =>
                     dispatch(contactFormActions.updateName(e.target.value))
@@ -121,6 +155,7 @@ export default function ContactForm() {
                   inputMode="email"
                   type="email"
                   variant="outlined"
+                  error={!emailValid}
                   sx={{ marginTop: 2 }}
                   fullWidth
                   value={email}
@@ -136,6 +171,7 @@ export default function ContactForm() {
                   fullWidth
                   multiline
                   rows={4}
+                  error={!messageValid}
                   value={message}
                   onChange={(e) => {
                     dispatch(contactFormActions.updateMessage(e.target.value))
@@ -149,6 +185,7 @@ export default function ContactForm() {
                     sx={{ textTransform: 'capitalize' }}
                     variant="contained"
                     size=""
+                    // disabled={!isFormValid}
                   >
                     Say Hi
                   </Button>
@@ -157,6 +194,7 @@ export default function ContactForm() {
                     sx={{ textTransform: 'capitalize' }}
                     variant="contained"
                     size=""
+                    // disabled={!isFormValid}
                   >
                     Hire Me! 🎉
                   </Button>

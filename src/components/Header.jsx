@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles'
 import { MdDarkMode, MdSunny } from 'react-icons/md'
 import { modeActions } from '../store'
 import { useSelector, useDispatch } from 'react-redux'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Confetti from 'react-confetti'
 
 // color theme
@@ -12,7 +12,7 @@ import Confetti from 'react-confetti'
 export default function Header() {
   const location = useLocation()
   const isHome = location.pathname === '/'
-  // console.log(location)
+  const navigate = useNavigate()
 
   const MyButton = styled(Button)({
     textTransform: 'capitalize',
@@ -97,7 +97,11 @@ export default function Header() {
             <MdSunny color={`${colorTheme.primaryText}`} />
           )}
         </IconButton>
-        <MyButton variant="contained" color="primary">
+        <MyButton
+          onClick={() => navigate('/resume')}
+          variant="contained"
+          color="primary"
+        >
           Resume
         </MyButton>
       </div>
