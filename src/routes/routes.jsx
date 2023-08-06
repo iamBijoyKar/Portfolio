@@ -8,6 +8,7 @@ import AboutPage from '../pages/About.jsx'
 import SkillsPage from '../pages/Skills.jsx'
 import ProjectsPage from '../pages/Projects.jsx'
 import ContactPage from '../pages/Contact.jsx'
+import Resume from '../pages/Resume.jsx'
 
 const handleFallback = (Component) => {
   return (
@@ -38,6 +39,10 @@ export const routes = createBrowserRouter([
   {
     path: '/contact',
     element: handleFallback(ContactPage),
+  },
+  {
+    path: '/resume',
+    element: handleFallback(Resume),
   },
   {
     path: '*',
