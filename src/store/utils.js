@@ -42,3 +42,43 @@ export function getTheme() {
 export function setTheme(mode) {
   return mode ? darkTheme : lightTheme
 }
+
+export function getContactFormName() {
+  return sessionStorage.getItem('name')
+}
+
+export function getContactFormEmail() {
+  return sessionStorage.getItem('email')
+}
+
+export function getContactFormMessage() {
+  return sessionStorage.getItem('message')
+}
+
+export function setContactFormName(name) {
+  sessionStorage.setItem('name', name)
+}
+
+export function setContactFormEmail(email) {
+  sessionStorage.setItem('email', email)
+}
+
+export function setContactFormMessage(message) {
+  sessionStorage.setItem('message', message)
+}
+
+export function getIsHireMeSubmitted() {
+  return sessionStorage.getItem('isHireMeSubmitted')
+}
+
+export function getIsSayHiSubmitted() {
+  return sessionStorage.getItem('isSayHiSubmitted')
+}
+
+export function setIsHireMeSubmitted(isHireMeSubmitted) {
+  sessionStorage.setItem('isHireMeSubmitted', isHireMeSubmitted)
+}
+
+export function setIsSayHiSubmitted(isSayHiSubmitted) {
+  sessionStorage.setItem('isSayHiSubmitted', isSayHiSubmitted)
+}

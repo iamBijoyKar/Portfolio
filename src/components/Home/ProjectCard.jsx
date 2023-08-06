@@ -16,9 +16,20 @@ ProjectCard.propTypes = {
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
+  delay: PropTypes.number,
 }
 
-export default function ProjectCard({ title, description, image, link }) {
+ProjectCard.defaultProps = {
+  delay: 0,
+}
+
+export default function ProjectCard({
+  title,
+  description,
+  image,
+  link,
+  delay,
+}) {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
   const theme = useSelector((state) => state.mode.darkMode)
 
@@ -26,7 +37,7 @@ export default function ProjectCard({ title, description, image, link }) {
     <motion.div
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.2, delay: 2 }}
+      transition={{ duration: 0.2, delay: delay }}
       className=""
     >
       <Card

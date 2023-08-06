@@ -53,19 +53,22 @@ export default function Projects() {
             title="Emoji Pixel Art"
             description="Emoji Pixel Art is a open source project of pixel arts. It contains emojis in 32x32 canvas made with a free platform called Pixilart."
             image={emojiPixel}
-            link=""
+            link="https://github.com/iamBijoyKar/emojis-pixel-art"
+            delay={1}
           />
           <ProjectCard
             title="JsonDb"
             description="JsonDb is a open source project of a database cli app, made with json files. It is written in C++."
             image={jsonIcon}
-            link=""
+            link="https://github.com/iamBijoyKar/jsondb"
+            delay={1.3}
           />
           <ProjectCard
             title="Morse in one "
             description="A npm package that converts morse code to text and vice versa. It is written in JavaScript."
             image={morseIcon}
-            link=""
+            link="https://github.com/iamBijoyKar/morse-in-one"
+            delay={1.6}
           />
         </div>
         <div className="w-full flex justify-center mt-4">
