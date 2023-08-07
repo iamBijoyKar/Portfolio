@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-
+import { useLocation } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -15,8 +15,15 @@ Layout.defaultProps = {
 }
 
 export default function Layout({ children }) {
+  const location = useLocation()
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      window.scrollTo(0, 0)
+    }
+  }, [location.pathname])
+
   const colorTheme = useSelector((state) => state.mode.colorTheme)
-  console.log(colorTheme)
+
   return (
     <div style={{ backgroundColor: colorTheme.primaryBg }}>
       <Header />
