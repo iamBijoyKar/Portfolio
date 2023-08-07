@@ -9,6 +9,7 @@ import { SlDocs } from 'react-icons/sl'
 import { GrResources } from 'react-icons/gr'
 import { BsFillPersonVcardFill } from 'react-icons/bs'
 import { FcAbout } from 'react-icons/fc'
+import { PiConfettiFill } from 'react-icons/pi'
 import { useSelector } from 'react-redux'
 
 export default function BackBtn() {
@@ -95,6 +96,13 @@ export default function BackBtn() {
         <>
           <SlDocs className="text-xl mr-2" />
           Resume
+        </>
+      )
+    } else if (location.pathname === '/confetti') {
+      return (
+        <>
+          <PiConfettiFill className="text-xl mr-2" />
+          Confetti
         </>
       )
     }
