@@ -39,19 +39,22 @@ export default function Footer() {
         </div>
         <div className="flex gap-4 lg:gap-6 font-semibold justify-between w-full lg:w-fit">
           <div className="flex flex-col gap-3">
-            <Link to="/">About</Link>
-            <Link to="/">Skills</Link>
-            <Link to="/">Projects</Link>
+            <Link to="/about">About</Link>
+            <Link to="/skills">Skills</Link>
+            <Link to="/projects">Projects</Link>
+            <Link to="/contact">Contact</Link>
           </div>
           <div className="flex flex-col gap-3">
-            <Link to="/">Testimonials</Link>
-            <Link to="/">Blog</Link>
-            <Link to="/">Contact</Link>
+            <Link to="/testimonials">Testimonials</Link>
+            <Link to="/blog">Blog</Link>
+            <Link to="/resume">Resume</Link>
+            <Link to="/faq">FAQ</Link>
           </div>
           <div className="flex flex-col gap-3">
-            <Link to="/">Resources</Link>
-            <Link to="/">GitHub</Link>
-            <Link to="/">Copyright</Link>
+            <Link to="/confetti">Confetti</Link>
+            <Link to="/resources">Resources</Link>
+            <Link to="/github">GitHub</Link>
+            <Link to="/copyright">Copyright</Link>
           </div>
         </div>
       </div>
@@ -60,15 +63,15 @@ export default function Footer() {
         style={{ backgroundColor: colorTheme.primaryText, height: '1.5px' }}
       />
       <div className="flex gap-4 justify-center lg:justify-end w-full ">
-        <Link className=" " to="/">
+        <Link className=" " to="https://github.com/iamBijoyKar">
           <BsGithub className="text-2xl inline-block mr-2" />
           GitHub
         </Link>
-        <Link to="/">
+        <Link to="https://www.linkedin.com/in/iambijoykar/">
           <BsLinkedin className="text-2xl inline-block mr-2" />
           LinkedIn
         </Link>
-        <Link to="/">
+        <Link to="https://twitter.com/iamBijoyKar">
           <BsTwitter className="text-2xl inline-block  mr-2" />
           Twitter
         </Link>

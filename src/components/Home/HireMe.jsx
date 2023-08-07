@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import handShake from '../../assets/handshake-v.mp4'
 import { confettiActions } from '../../store'
 import { useNavigate } from 'react-router-dom'
+import { Button } from '@mui/material'
 
 export default function HireMe() {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
@@ -35,16 +36,19 @@ export default function HireMe() {
         isHireMeSubmitted && 'hidden'
       } `}
     >
-      <div
+      <Button
         onClick={handleClick}
-        style={{
+        sx={{
           color: colorTheme.primaryText,
           backgroundColor: colorTheme.primaryText + '1A',
+          padding: '1rem 2rem',
+          border: '1px solid ' + colorTheme.primaryText,
         }}
-        className="border border-[#dddddd] rounded-lg py-4  px-8 cursor-pointer"
+        size="large"
+        className=" rounded-lg "
       >
         <h1 className="text-xl">Hire Me</h1>
-      </div>
+      </Button>
       {handShakeVisible && (
         <div className="max-w-[400px] w-full">
           <video autoPlay ref={videoRef} src={handShake}></video>

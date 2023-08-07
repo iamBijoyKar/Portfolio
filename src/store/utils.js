@@ -12,7 +12,9 @@ export function knowMode() {
     return true
   }
   document.documentElement.setAttribute('style', '--underline-color: #000')
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+  localStorage.setItem('mode', isDark ? 'dark' : 'light')
+  return isDark
 }
 
 export function setMode(mode) {
