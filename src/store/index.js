@@ -38,10 +38,14 @@ const modeSlice = createSlice({
       state.darkMode = !state.darkMode
       setMode(state.darkMode ? 'dark' : 'light')
       state.colorTheme = setTheme(state.darkMode)
+      // css variables update on theme change
       document.documentElement.setAttribute(
         'style',
         `--underline-color: ${state.darkMode ? '#fff' : '#000'}`,
       )
+      document.getElementById('favicon').href = state.darkMode
+        ? '/tab-logo/2.png'
+        : '/tab-logo/1.png'
     },
   },
 })
