@@ -6,6 +6,7 @@ import Projects from '../components/Home/Projects'
 import Skills from '../components/Home/Skills'
 import SmNav from '../components/Home/SmNav'
 import Contact from '../components/Home/Contact'
+import Exp from '../components/Home/Exp'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <div className="fixed bottom-1 right-1 lg:hidden">
           <SmNav />
         </div>
+        <Exp />
         <Contact />
       </div>
     </Layout>
