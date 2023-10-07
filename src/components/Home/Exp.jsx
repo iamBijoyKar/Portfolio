@@ -25,7 +25,7 @@ export default function Exp() {
         'It was a remote internship. My main work was to promoting courses through social media, I learned about Social Media Marketing and Sales.',
     },
     {
-      label: 'Step 2',
+      label: 'Web Developer Intern at Skygoal',
       time: 'March 2023 - June 2023',
       description:
         'Worked as a Front-end developer for 3 months. Mainly used React, Tailwindcss, Bootstrap for development. Learned about Real World Work Experience, Discipline Advance React , Communication Skills etc. It was a remote internship.',
