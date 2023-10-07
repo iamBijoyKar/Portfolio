@@ -10,6 +10,7 @@ import ProjectsPage from '../pages/Projects.jsx'
 import ContactPage from '../pages/Contact.jsx'
 import Resume from '../pages/Resume.jsx'
 import ConfettiRoom from '../pages/ConfettiRoom.jsx'
+import Page404 from '../pages/404.jsx'
 
 const handleFallback = (Component) => {
   return (
@@ -51,7 +52,7 @@ export const routes = createBrowserRouter([
   },
   {
     path: '*',
-    element: <h1>Error</h1>,
+    element: handleFallback(Page404),
   },
 ])
 

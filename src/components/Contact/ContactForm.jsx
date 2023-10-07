@@ -111,15 +111,23 @@ export default function ContactForm() {
         <div
           ref={animateOutRef}
           style={{ color: colorTheme.primaryText }}
-          className={`max-w-[500px] w-full mt-4`}
+          className={`max-w-[400px] w-full mt-4 rounded-lg`}
         >
           {/* <h1 className="text-4xl font-bold text-center mb-4">Contact Me</h1> */}
-          <div className="shadow-xl bg-[url('/images/form-bg.jpg')] ">
+          <div
+            style={{
+              background: 'url(/images/form-bg2.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+            className="shadow-xl rounded-lg "
+          >
             <Card
+              variant="outlined"
               className="flex flex-col items-center "
               sx={{
                 minWidth: 355,
-                // backgroundColor: '#ffffffa5',
+                backgroundColor: '#ffffff15',
                 // border: '1px solid #ffffff55',
               }}
             >
@@ -127,8 +135,9 @@ export default function ContactForm() {
                 title={
                   <Typography
                     // color={colorTheme.primaryText}
-                    variant="h3"
+                    variant="h4"
                     component="div"
+                    className="font-bold text-center mb-4"
                   >
                     Get in Touch
                   </Typography>

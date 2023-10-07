@@ -84,7 +84,7 @@ export default function Contact() {
           </Button>
         </div>
       </div>
-      <HireMe />
+      {/* <HireMe /> */}
     </div>
   )
 }

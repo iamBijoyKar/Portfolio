@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles'
 import { MdDarkMode, MdSunny } from 'react-icons/md'
 import { modeActions } from '../store'
 import { useSelector, useDispatch } from 'react-redux'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, Link } from 'react-router-dom'
 import Confetti from 'react-confetti'
 
 // color theme
@@ -34,12 +34,14 @@ export default function Header() {
       style={{ backgroundColor: colorTheme.primaryBg }}
     >
       {confetti && <Confetti />}
-      <h1
-        className="text-xl font-bold uppercase"
-        style={{ color: colorTheme.primaryText }}
-      >
-        Bijoy Kar
-      </h1>
+      <Link to="/">
+        <h1
+          className="text-xl font-bold uppercase"
+          style={{ color: colorTheme.primaryText }}
+        >
+          Bijoy Kar
+        </h1>
+      </Link>
       {isHome && (
         <ul className="gap-5 items-center hidden lg:flex">
           <li className="">
@@ -76,6 +78,15 @@ export default function Header() {
               style={{ color: colorTheme.primaryText }}
             >
               Projects
+            </a>
+          </li>
+          <li className="">
+            <a
+              href="#experience"
+              className="text-md font-semibold animate-underline"
+              style={{ color: colorTheme.primaryText }}
+            >
+              Exp
             </a>
           </li>
           <li className="">

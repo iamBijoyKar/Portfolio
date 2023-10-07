@@ -21,7 +21,7 @@ export default function SayHi() {
       style={{
         color: colorTheme.primaryText,
       }}
-      className="text-center max-w-[500px] w-full mx-auto"
+      className="text-center max-w-[400px] w-full mx-auto"
     >
       <Card>
         <CardHeader
