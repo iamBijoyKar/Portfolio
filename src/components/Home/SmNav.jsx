@@ -6,10 +6,12 @@ import SpeedDialAction from '@mui/material/SpeedDialAction'
 import { AiFillHome } from 'react-icons/ai'
 import { SiAboutdotme } from 'react-icons/si'
 import { AiFillProject, AiOutlinePhone } from 'react-icons/ai'
-import { BiCodeAlt } from 'react-icons/bi'
+import { BiCodeAlt, BiNavigation } from 'react-icons/bi'
+import { BsFillExplicitFill } from 'react-icons/bs'
 
 const actions = [
   { icon: <AiOutlinePhone />, id: 'contact', name: 'Contact' },
+  { icon: <BsFillExplicitFill />, id: 'experience', name: 'Experience' },
   { icon: <AiFillProject />, id: 'projects', name: 'Projects' },
   { icon: <BiCodeAlt />, id: 'skills', name: 'Skills' },
   { icon: <SiAboutdotme />, id: 'about', name: 'About' },
@@ -35,7 +37,7 @@ export default function SmNav() {
         open={open}
         ariaLabel="SpeedDial basic example"
         sx={{ position: 'absolute', bottom: 16, right: 16 }}
-        icon={<SpeedDialIcon />}
+        icon={!open ? <BiNavigation className="text-2xl" /> : <SpeedDialIcon />}
       >
         {actions.map((action) => (
           <SpeedDialAction

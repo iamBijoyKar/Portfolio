@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Layout from '../Layouts/Layout'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -6,15 +7,24 @@ import errorImg from '../assets/404-error.png'
 
 export default function Page404() {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
-  const [count, setCount] = useState(15)
+  const [count, setCount] = useState(10)
+  const location = useLocation()
+  const navigate = useNavigate()
+  const [currentPath, setCurrentPath] = useState(location.pathname)
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setCount((prev) => prev - 1)
+      setCount((prev) => {
+        if (prev === 0 || prev < 0) {
+          navigate('/')
+          clearInterval(interval)
+        }
+        if (currentPath !== location.pathname) {
+          clearInterval(interval)
+        }
+        return prev - 1
+      })
     }, 1000)
-    setTimeout(() => {
-      window.location.href = '/'
-      clearInterval(interval)
-    }, 10000)
     return () => clearInterval(interval)
   }, [])
 
