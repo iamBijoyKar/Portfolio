@@ -11,6 +11,7 @@ import ContactPage from '../pages/Contact.jsx'
 import Resume from '../pages/Resume.jsx'
 import ConfettiRoom from '../pages/ConfettiRoom.jsx'
 import Page404 from '../pages/404.jsx'
+import Experience from '../pages/Experience.jsx'
 
 const handleFallback = (Component) => {
   return (
@@ -53,6 +54,10 @@ export const routes = createBrowserRouter([
   {
     path: '*',
     element: handleFallback(Page404),
+  },
+  {
+    path: '/experience',
+    element: handleFallback(Experience),
   },
 ])
 
