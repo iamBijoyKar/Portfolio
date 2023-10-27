@@ -7,10 +7,7 @@ export default function Intro() {
   return (
     <div className="" style={{ color: colorTheme.primaryText }}>
       <Typography variant="h3" className="font-bold text-center">
-        Full Stack Web Developer
-      </Typography>
-      <Typography variant="h5" className="text-center">
-        React | Redux | Node | Express | MongoDB
+        Experiences
       </Typography>
     </div>
   )

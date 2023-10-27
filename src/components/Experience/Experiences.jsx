@@ -191,7 +191,7 @@ function ExpContainer({ children, index, icon }) {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
 
   return (
-    <div className="flex flex-col items-center justify-center border-l-2 relative pl-6 ">
+    <div className="flex flex-col items-center justify-center border-l-2 relative md:pl-6 ">
       <span
         style={{ backgroundColor: colorTheme.primaryBg }}
         className="absolute top-0 left-[-1rem] w-8 h-8 rounded-full flex items-center justify-center  "
