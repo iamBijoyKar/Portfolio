@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, lazy } from 'react'
 import { Tab, Tabs, Typography, Chip } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -11,9 +11,38 @@ import {
   PiNumberCircleTwoBold,
   PiNumberCircleThreeBold,
 } from 'react-icons/pi'
+import ExpMedia from './ExpMedia'
+import skygoalOfferLetter from '../../assets/skygoal-offer-letter.jpg'
+import skygoalCompleteLetter from '../../assets/skygoal-complete-letter.jpg'
+import ispOfferLetter from '../../assets/isp-offer-letter.jpg'
+import ispCompleteLetter from '../../assets/isp-complete-letter.jpg'
 
 export default function Experiences() {
   const [page, setPage] = useState(0)
+  const expMediaData1 = [
+    {
+      img: skygoalOfferLetter,
+      title: 'SkyGoal® Inc Offer Letter',
+      description: 'Offer Letter for Web Development Intern',
+    },
+    {
+      img: skygoalCompleteLetter,
+      title: 'SkyGoal® Inc Complete Letter',
+      description: 'Complete Letter for Web Development Intern',
+    },
+  ]
+  const expMediaData2 = [
+    {
+      img: ispOfferLetter,
+      title: 'ISP Offer Letter',
+      description: 'Offer Letter for Internshala Student Partner',
+    },
+    {
+      img: ispCompleteLetter,
+      title: 'ISP Complete Letter',
+      description: 'Complete Letter for Internshala Student Partner',
+    },
+  ]
   const colorTheme = useSelector((state) => state.mode.colorTheme)
 
   return (
@@ -73,6 +102,7 @@ export default function Experiences() {
               variant=""
             />
           </div>
+          <ExpMedia media={expMediaData2} />
         </ExpContainer>
 
         <ExpContainer
@@ -142,6 +172,7 @@ export default function Experiences() {
               variant=""
             />
           </div>
+          <ExpMedia media={expMediaData1} />
         </ExpContainer>
         <ExpContainer
           icon={<PiNumberCircleThreeBold className="text-3xl" />}
