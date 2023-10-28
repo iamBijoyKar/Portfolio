@@ -10,6 +10,7 @@ import { GrResources } from 'react-icons/gr'
 import { BsFillPersonVcardFill } from 'react-icons/bs'
 import { FcAbout } from 'react-icons/fc'
 import { PiConfettiFill } from 'react-icons/pi'
+import { MdWorkHistory } from 'react-icons/md'
 import { useSelector } from 'react-redux'
 
 export default function BackBtn() {
@@ -103,6 +104,13 @@ export default function BackBtn() {
         <>
           <PiConfettiFill className="text-xl mr-2" />
           Confetti
+        </>
+      )
+    } else if (location.pathname === '/experience') {
+      return (
+        <>
+          <MdWorkHistory className="text-xl mr-2" />
+          Experience
         </>
       )
     }
