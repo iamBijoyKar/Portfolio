@@ -14,6 +14,7 @@ import flaskIcon from '../../assets/icons8-flask.svg'
 import pythonIcon from '../../assets/icons8-python.svg'
 import astroIconLight from '../../assets/astro-icon-light.svg'
 import astroIconDark from '../../assets/astro-icon-dark.svg'
+import nextJsIcon from '../../assets/icons8-nextjs.svg'
 import SkillCard from './SkillCard'
 import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
@@ -61,6 +62,20 @@ export default function Skills() {
       >
         <h1 className="text-3xl mb-4 font-bold">Skills</h1>
         <div className="flex flex-wrap gap-3 justify-center">
+          <SkillCard title={`NextJs`}>
+            <motion.img
+              whileHover={{ scale: 1.2 }}
+              src={nextJsIcon}
+              width={'60px'}
+              className="group"
+              style={{
+                filter: `drop-shadow(0px 0px 10px #${
+                  isDark ? 'dddddd35' : '00000055'
+                })`,
+              }}
+              alt=""
+            />
+          </SkillCard>
           <SkillCard title={`React`}>
             <motion.img
               animate={{ rotate: 360 }}

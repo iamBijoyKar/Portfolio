@@ -18,9 +18,11 @@ import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 import Hired from './Hired'
 import SayHi from './SayHi'
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function ContactForm() {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
+  const isDarkMode = useSelector((state) => state.mode.darkMode)
   const name = useSelector((state) => state.contactForm.name)
   const email = useSelector((state) => state.contactForm.email)
   const message = useSelector((state) => state.contactForm.message)
@@ -56,7 +58,50 @@ export default function ContactForm() {
   }, [isHireMeSubmitted, isSayHiSubmitted, animateOut])
 
   const hireMeHandler = () => {
-    if (!isFormValid) return
+    if (!isFormValid) {
+      if (!nameValid) {
+        toast.error('Please enter a valid name!', {
+          duration: 4000,
+          position: 'top-center',
+          style: {
+            backgroundColor: isDarkMode ? '#333' : '#fff',
+            color: isDarkMode ? '#fff' : '#333',
+          },
+        })
+      }
+      if (!emailValid) {
+        toast.error('Please enter a valid email!', {
+          duration: 4000,
+          position: 'top-center',
+          style: {
+            backgroundColor: isDarkMode ? '#333' : '#fff',
+            color: isDarkMode ? '#fff' : '#333',
+          },
+        })
+      }
+      if (!messageValid) {
+        toast.error('Please enter a valid message!', {
+          duration: 4000,
+          position: 'top-center',
+          style: {
+            backgroundColor: isDarkMode ? '#333' : '#fff',
+            color: isDarkMode ? '#fff' : '#333',
+          },
+        })
+      }
+      if (message === '') {
+        toast('The message must be filled!', {
+          duration: 4000,
+          position: 'top-center',
+          icon: '📝',
+          style: {
+            backgroundColor: isDarkMode ? '#333' : '#fff',
+            color: isDarkMode ? '#fff' : '#333',
+          },
+        })
+      }
+      return
+    }
     dispatch(contactFormActions.updateIsHireMeSubmitted(true))
     dispatch(confettiActions.toggle())
 
@@ -66,7 +111,50 @@ export default function ContactForm() {
   }
 
   const sayHiHandler = () => {
-    if (!isFormValid) return
+    if (!isFormValid) {
+      if (!nameValid) {
+        toast.error('Please enter a valid name!', {
+          duration: 4000,
+          position: 'top-center',
+          style: {
+            backgroundColor: isDarkMode ? '#333' : '#fff',
+            color: isDarkMode ? '#fff' : '#333',
+          },
+        })
+      }
+      if (!emailValid) {
+        toast.error('Please enter a valid email!', {
+          duration: 4000,
+          position: 'top-center',
+          style: {
+            backgroundColor: isDarkMode ? '#333' : '#fff',
+            color: isDarkMode ? '#fff' : '#333',
+          },
+        })
+      }
+      if (!messageValid) {
+        toast.error('Please enter a valid message!', {
+          duration: 4000,
+          position: 'top-center',
+          style: {
+            backgroundColor: isDarkMode ? '#333' : '#fff',
+            color: isDarkMode ? '#fff' : '#333',
+          },
+        })
+      }
+      if (message === '') {
+        toast('The message must be filled!', {
+          duration: 4000,
+          position: 'top-center',
+          icon: '📝',
+          style: {
+            backgroundColor: isDarkMode ? '#333' : '#fff',
+            color: isDarkMode ? '#fff' : '#333',
+          },
+        })
+      }
+      return
+    }
     dispatch(contactFormActions.updateIsSayHiSubmitted(true))
   }
 
@@ -114,14 +202,8 @@ export default function ContactForm() {
           className={`max-w-[400px] w-full mt-4 rounded-lg`}
         >
           {/* <h1 className="text-4xl font-bold text-center mb-4">Contact Me</h1> */}
-          <div
-            style={{
-              background: 'url(/images/form-bg2.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-            className="shadow-xl rounded-lg "
-          >
+          <Toaster />
+          <div className="shadow-xl rounded-lg bg-slate-100 bg-[url('/blobanimation.svg')] bg-right-top bg-clip-content bg-origin-content bg-contain ">
             <Card
               variant="outlined"
               className="flex flex-col items-center "
@@ -146,7 +228,7 @@ export default function ContactForm() {
 
               <CardContent className="w-full">
                 <TextField
-                  id="fullWidth"
+                  name="name"
                   label="Name"
                   variant="outlined"
                   type="text"
@@ -159,7 +241,7 @@ export default function ContactForm() {
                   fullWidth
                 />
                 <TextField
-                  id="fullWidth"
+                  name="email"
                   label="Email"
                   inputMode="email"
                   type="email"
@@ -173,7 +255,7 @@ export default function ContactForm() {
                   }}
                 />
                 <TextField
-                  id="fullWidth"
+                  name="message"
                   label="Message"
                   variant="outlined"
                   sx={{ marginTop: 2 }}
