@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Layout from '../Layouts/Layout'
 import BackBtn from '../components/BackBtn'
 import { AiFillCaretDown } from 'react-icons/ai'
@@ -11,6 +11,7 @@ import Paper from '@mui/material/Paper'
 import Popper from '@mui/material/Popper'
 import MenuItem from '@mui/material/MenuItem'
 import MenuList from '@mui/material/MenuList'
+import CompLoader from '../components/Loader/CompLoader'
 
 export default function Resume() {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
@@ -73,14 +74,16 @@ export default function Resume() {
           className="max-w-[800px] flex flex-col items-center justify-center w-full p-4 "
         >
           <h1 className="text-4xl font-bold text-center mb-4">My Resume</h1>
-          <img
-            style={{
-              boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.35)',
-            }}
-            className=""
-            src="/resume/Bijoy-Kar.png"
-            alt=""
-          />
+          <Suspense fallback={<CompLoader />}>
+            <img
+              style={{
+                boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.35)',
+              }}
+              className=""
+              src="/resume/Bijoy-Kar.png"
+              alt=""
+            />
+          </Suspense>
           <div className="my-4">
             <ButtonGroup
               variant="contained"
