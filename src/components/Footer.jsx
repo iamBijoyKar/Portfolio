@@ -35,7 +35,7 @@ export default function Footer() {
               Tect Enthusiast
             </span>
           </div>
-          <p className="">Bijoy Kar © Copyright 2023</p>
+          <p className="">Bijoy Kar © Copyright 2024</p>
         </div>
         <div className="flex gap-4 lg:gap-6 font-semibold justify-between w-full lg:w-fit">
           <div className="flex flex-col gap-3">
