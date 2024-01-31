@@ -203,7 +203,7 @@ export default function ContactForm() {
         >
           {/* <h1 className="text-4xl font-bold text-center mb-4">Contact Me</h1> */}
           <Toaster />
-          <div className="shadow-xl rounded-lg bg-slate-100  ">
+          <div className="shadow-xl rounded-lg bg-slate-100 bg-[url('/blobanimation.svg')] bg-right-top bg-clip-content bg-origin-content bg-contain ">
             <Card
               variant="outlined"
               className="flex flex-col items-center "
