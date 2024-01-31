@@ -21,6 +21,8 @@ import gitLabIcon from '../../assets/icons8-gitlab.svg'
 import gitHubIcon from '../../assets/icons8-github.svg'
 import cProgIcon from '../../assets/icons8-c-programming.svg'
 import bootstrapIcon from '../../assets/icons8-bootstrap.svg'
+import nextJsIcon from '../../assets/icons8-nextjs.svg'
+import typeScript from '../../assets/icons8-typescript.png'
 
 export default function Skills() {
   const colorTheme = useSelector((state) => state.mode.colorTheme)
@@ -31,6 +33,20 @@ export default function Skills() {
       <div className="flex flex-col items-center justify-center gap-4">
         <h1 className="text-2xl text-center font-bold mt-8">Frontend</h1>
         <div className="flex flex-wrap gap-3 justify-center max-w-[800px]">
+          <SkillCard title={`NextJs`}>
+            <motion.img
+              whileHover={{ scale: 1.2 }}
+              src={nextJsIcon}
+              width={'60px'}
+              className="group"
+              style={{
+                filter: `drop-shadow(0px 0px 10px #${
+                  isDark ? 'dddddd35' : '00000055'
+                })`,
+              }}
+              alt=""
+            />
+          </SkillCard>
           <SkillCard title={`React`}>
             <motion.img
               animate={{ rotate: 360 }}
@@ -196,6 +212,15 @@ export default function Skills() {
               src={jsIcon}
               width={'50px'}
               style={{ filter: 'drop-shadow(0px 0px 10px #F0DE36A5)' }}
+              alt=""
+            />
+          </SkillCard>
+          <SkillCard title={`TypeScript`}>
+            <motion.img
+              whileHover={{ scale: 1.2 }}
+              src={typeScript}
+              width={'50px'}
+              style={{ filter: 'drop-shadow(0px 0px 10px #2CD3E144)' }}
               alt=""
             />
           </SkillCard>
