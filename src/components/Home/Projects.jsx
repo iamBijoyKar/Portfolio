@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import { useInView, useAnimate } from 'framer-motion'
 import { useSelector } from 'react-redux'
 import ProjectCard from './ProjectCard'
-import emojiPixel from '../../assets/pixel-emojis.jpg'
 import jsonIcon from '../../assets/jsondb.jpg'
-import morseIcon from '../../assets/morse-in-one.jpg'
+import xCodeImg from '../../assets/x-code.png'
+import floatingHippoImg from '../../assets/Floating-hippo2.png'
 import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
@@ -50,10 +50,10 @@ export default function Projects() {
         <h1 className="text-3xl mb-4 font-bold">Projects</h1>
         <div className="flex flex-col items-center justify-center lg:flex-row gap-4">
           <ProjectCard
-            title="Emoji Pixel Art"
-            description="Emoji Pixel Art is a open source project of pixel arts. It contains emojis in 32x32 canvas made with a free platform called Pixilart."
-            image={emojiPixel}
-            link="https://github.com/iamBijoyKar/emojis-pixel-art"
+            title="Floating Hippo"
+            description="Floating Hippo is a easy to use python 2D simulation library."
+            image={floatingHippoImg}
+            link="https://github.com/iamBijoyKar/floating_hippo"
             delay={1}
           />
           <ProjectCard
@@ -64,10 +64,10 @@ export default function Projects() {
             delay={1.3}
           />
           <ProjectCard
-            title="Morse in one "
-            description="A npm package that converts morse code to text and vice versa. It is written in JavaScript."
-            image={morseIcon}
-            link="https://github.com/iamBijoyKar/morse-in-one"
+            title="X Code"
+            description="X Code is a Visual Code Editor made with Tauri and React. It is inspired by Visual Studio Code."
+            image={xCodeImg}
+            link="https://github.com/iamBijoyKar/x-code"
             delay={1.6}
           />
         </div>
