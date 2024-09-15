@@ -46,7 +46,10 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-3">
             <Link to="/testimonials">Testimonials</Link>
-            <Link to="https://blog-bijoy-kar.netlify.app/" target="_blank">
+            <Link
+              to="https://blogbijoykar-iambijoykars-projects.vercel.app/"
+              target="_blank"
+            >
               Blog
             </Link>
             <Link to="/resume">Resume</Link>
